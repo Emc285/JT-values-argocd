@@ -4,6 +4,8 @@
 
 replicaCount: 5
 
+name: app
+
 image:
   repository: amralaayassen/helm-app
   pullPolicy: IfNotPresent
