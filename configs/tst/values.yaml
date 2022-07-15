@@ -1,32 +1,28 @@
-teste:
+replicaCount: 5
 
-  enabled: true
+name: app
 
-  replicaCount: 5
+image:
+  repository: amralaayassen/helm-app
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+#  tag: "tst"
 
-  name: app
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
 
-  image:
-    repository: amralaayassen/helm-app
-    pullPolicy: IfNotPresent
-    # Overrides the image tag whose default is the chart appVersion.
-  #  tag: "tst"
-
-  imagePullSecrets: []
-  nameOverride: ""
-  fullnameOverride: ""
-
-  service:
-    type: NodePort
-    port: 30008
+service:
+  type: NodePort
+  port: 30008
 
 
-  ## Application level settings
-  appMode: staging
-  certificatePath: /etc/ssl/staging
-  paypalURLLocation: https://staging.paypal.example.com
-  databaseUser: staging-user
-  databasePassword: staging-password
+## Application level settings
+appMode: staging
+certificatePath: /etc/ssl/staging
+paypalURLLocation: https://staging.paypal.example.com
+databaseUser: staging-user
+databasePassword: staging-password
 
 
 
