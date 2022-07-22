@@ -3,12 +3,11 @@ kind: Application
 metadata:
   name: poc-app
 spec:
-  spec:
-    project: default
-    source:
-      path: helm/tst
-      repoURL: https://github.com/Emc285/JT-values-argocd.git
-      targetRevision: main
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: tst
+  project: default
+  source:
+    path: helm/cq
+    repoURL: https://github.com/Emc285/JT-values-argocd.git
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: tst
