@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tst-apps
+spec:
+  spec:
+    project: default
+    source:
+      path: demo/tst
+      repoURL: https://github.com/Emc285/argocd-helm-demo.git
+      targetRevision: main
+      helm:
+        valueFiles:
+          - values.yaml
+          - configs/tst/values.yaml
+    destination:
+      server: https://kubernetes.default.svc
+      namespace: tst

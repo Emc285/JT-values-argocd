@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cq-apps
+spec:
+    spec:
+      project: default
+      source:
+        path: demo/cq
+        repoURL: https://github.com/Emc285/argocd-helm-demo.git
+        targetRevision: main
+        helm:
+          valueFiles:
+            - values.yaml
+            - configs/cq/values.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: cq
