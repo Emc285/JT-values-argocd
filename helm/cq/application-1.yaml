@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: cq-apps
+  name: appppsss
   namespace: argocd
 spec:
   project: default
@@ -12,7 +12,7 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-        - configs/cq/values.yaml
+        - 'configs/{{namespace}}/values.yaml'
   destination:
     server: https://kubernetes.default.svc
-    namespace: cq
+    namespace: '{{namespace}}'
