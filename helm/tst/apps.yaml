@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    path: helm/cq
+    path: helm/tst
     repoURL: https://github.com/Emc285/JT-values-argocd.git
     targetRevision: main
   destination:
