@@ -8,7 +8,7 @@ spec:
   source:
     path: demo
     repoURL: https://github.com/Emc285/argocd-helm-demo.git
-    targetRevision: main
+    targetRevision: feature
     helm:
       valueFiles:
         - values.yaml
